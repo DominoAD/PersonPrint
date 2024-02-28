@@ -32,6 +32,13 @@ public class Main {
         printPerson(name, age);
         nameLetterCounter(name, age);
         tacoBell(name, age);
+        tacoBellTop(name, age);
+        Monsters monster = new Monsters();
+        monster.name = "Randall";
+        monster.scare();
+        monster.name = "Sully";
+        monster.scare();
+        monster.scare( "David");
     }
 
     public static void printPerson(String name, int age) {
@@ -60,5 +67,14 @@ public class Main {
 
         System.out.printf("This person's name has: %d letters", totalLength);
     }
-
+    //my method for taco bell top items
+    public static void tacoBellTop(String name, int age) //this is a random item picker to decide what the most bought menu item is
+    {
+        int item = (int) (Math.random() * 4);
+        String[] menu = {"Cheesy Gordita Crunches", "Chalupa Supremes", "Baja Blasts", "Nacho Cheese Doritos® Locos Tacos"};
+        //print what the item is
+        System.out.println("Thanks for your order " + name);
+        System.out.println("\n*The top item of the day is*" + " " + "\n"+
+                "_____________________________________\n" + menu[item] + ".\n"+ "_____________________________________\n");
+    }
 }
